@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     print("Latest Mars Weather Data:")
     for entry in weather_data:
-        print(f"Sol:{entry['sol']}")
+        print(f"Sol: {entry['sol']}")
         print(f" Average Temp: {entry['temp']} C")
         print(f" Average Wind Speed: {entry['wind']} m/s")
         print(f" Average Pressure: {entry['pressure']} Pa")
