@@ -1,3 +1,16 @@
+# File Name : Data.py
+# Student Name: Peter Phan,
+# email:  phanpv@mail.uc.edu,
+# Assignment Number: Assignment 10
+# Due Date:   4/10/2025
+# Course #/Section:   IS4010-001
+# Semester/Year:   Spring 2025
+# Brief Description of the assignment: execute an API using a URL, extract and print data to the console.
+
+# Brief Description of what this module does: Learn about accessing a database and producing results from the data. 
+# Citations: W3Schools: https://www.w3schools.com/python/python_string_formatting.asp
+#
+# Anything else that's relevant: 
 import requests
 import json
 
