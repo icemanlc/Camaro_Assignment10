@@ -6,14 +6,13 @@
 # Course #/Section:   IS4010-001
 # Semester/Year:   Spring 2025
 # Brief Description of the assignment: execute an API using a URL, extract and print data to the console.
-
 # Brief Description of what this module does: Learn about accessing a database and producing results from the data. 
-# Citations: W3Schools: https://www.w3schools.com/python/python_string_formatting.asp
-#StackOverflow: https://stackoverflow.com/questions/1871524/how-can-i-convert-json-to-csv
+# Citations: W3Schools: https://www.w3schools.com/python/python_string_formatting.asp, https://stackoverflow.com/questions/1871524/how-can-i-convert-json-to-csv
 # Anything else that's relevant: 
 import requests
 import json
 import csv
+import os
 
 class Data:
     """
@@ -53,6 +52,7 @@ class Data:
         @param filename String: name of the file to save the data in (default: mars_weather.csv)
         @return None
         """
+        filename = os.path.join("Data", "mars_weather.csv")  
         with open(filename, mode='w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=["sol", "temp", "wind", "pressure"])
             writer.writeheader()
