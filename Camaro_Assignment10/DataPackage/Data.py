@@ -1,6 +1,6 @@
 # File Name : Data.py
-# Student Name: Peter Phan,
-# email:  phanpv@mail.uc.edu,
+# Student Name: Peter Phan, Lucas Iceman, Caitlin Hutchins
+# email:  phanpv@mail.uc.edu, icemanlc@mail.uc.edu, hutchicu@mail.uc.edu
 # Assignment Number: Assignment 10
 # Due Date:   4/10/2025
 # Course #/Section:   IS4010-001
@@ -9,10 +9,11 @@
 
 # Brief Description of what this module does: Learn about accessing a database and producing results from the data. 
 # Citations: W3Schools: https://www.w3schools.com/python/python_string_formatting.asp
-#
+#StackOverflow: https://stackoverflow.com/questions/1871524/how-can-i-convert-json-to-csv
 # Anything else that's relevant: 
 import requests
 import json
+import csv
 
 class Data:
     def get_weather_data(self):
@@ -35,3 +36,11 @@ class Data:
                 "pressure": pressure
     })
             return weather_list
+        
+
+    def save_to_csv(self, weather_list, filename="mars_weather.csv"):
+        with open(filename, mode='w', newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=["sol", "temp", "wind", "pressure"])
+            writer.writeheader()
+            for entry in weather_list:
+                writer.writerow(entry) 
