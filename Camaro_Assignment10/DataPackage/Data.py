@@ -1,6 +1,6 @@
 # File Name : Data.py
-# Student Name: Peter Phan, Lucas Iceman, Caitlin Hutchins
-# email:  phanpv@mail.uc.edu, icemanlc@mail.uc.edu, hutchicu@mail.uc.edu
+# Student Name: Peter Phan, Lucas Iceman, Caitlin Hutchins, Peyton Bock
+# email:  phanpv@mail.uc.edu, icemanlc@mail.uc.edu, hutchicu@mail.uc.edu, bockps@mail.uc.edu
 # Assignment Number: Assignment 10
 # Due Date:   4/10/2025
 # Course #/Section:   IS4010-001
@@ -16,7 +16,15 @@ import json
 import csv
 
 class Data:
+    """
+    A class that interacts with NASA's InSight Mars Weather API and save data to a CSV.
+    """
     def get_weather_data(self):
+        """
+        Submit a request to NASA's Mars Weather API and parse the returned JSON
+        @param self: the instance of the class
+        @return List[Dict]: a list of dictionaries containing sol, temp, wind, and pressure
+        """
         response = requests.get('https://api.nasa.gov/insight_weather/?api_key=f3a8rz56U5IoORGzeSC8nRANkrddeJ2MHSxr4voW&feedtype=json&ver=1.0')
         json_string = response.content
         parsed_json = json.loads(json_string)
@@ -39,6 +47,12 @@ class Data:
         
 
     def save_to_csv(self, weather_list, filename="mars_weather.csv"):
+        """
+        Save a list of weather data dictionaries to a CSV file
+        @param weather_list List[Dict]: list of weather entries to be saved
+        @param filename String: name of the file to save the data in (default: mars_weather.csv)
+        @return None
+        """
         with open(filename, mode='w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=["sol", "temp", "wind", "pressure"])
             writer.writeheader()
