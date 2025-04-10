@@ -1,6 +1,6 @@
 # File Name : Main.py
-# Student Name: Peter Phan, Lucas Iceman, Caitlin Hutchins
-# email:  phanpv@mail.uc.edu, icemanlc@mail.uc.edu, hutchicu@mail.uc.edu
+# Student Name: Peter Phan, Lucas Iceman, Caitlin Hutchins, Peyton Bock
+# email:  phanpv@mail.uc.edu, icemanlc@mail.uc.edu, hutchicu@mail.uc.edu, bockps@mail.uc.edu
 # Assignment Number: Assignment 10
 # Due Date:   4/10/2025
 # Course #/Section:   IS4010-001
